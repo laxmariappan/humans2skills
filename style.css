@@ -408,17 +408,13 @@ section {
     color: var(--color-text-lighter);
 }
 
-/* ---------- Generator CTA ---------- */
-.generator-cta {
+/* ---------- Create Section ---------- */
+.create {
     background: var(--color-bg-alt);
-    text-align: center;
-    padding: var(--space-md) 0;
 }
 
-.generator-cta p {
-    margin: 0;
-    color: var(--color-text-light);
-    font-size: 0.95rem;
+.create h2 {
+    margin-bottom: var(--space-xs);
 }
 
 /* ---------- Navigation ---------- */
@@ -618,12 +614,8 @@ footer {
 }
 
 footer p {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm);
     font-size: 0.95rem;
-}
-
-footer p:last-child {
-    margin-bottom: 0;
 }
 
 footer a {
@@ -632,6 +624,22 @@ footer a {
 
 footer a:hover {
     color: white;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--color-text-lighter);
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary-light);
 }
 
 /* ---------- Responsive ---------- */

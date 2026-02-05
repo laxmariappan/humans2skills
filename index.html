@@ -10,10 +10,10 @@
 <body>
     <nav class="nav">
         <div class="container nav-container">
-            <a href="index.html" class="nav-logo">Humans 2 Skills</a>
+            <a href="#" class="nav-logo">Humans 2 Skills</a>
             <div class="nav-links">
                 <a href="#examples">Examples</a>
-                <a href="generator.html">Create</a>
+                <a href="#create">Create</a>
                 <a href="https://github.com/laxmariappan/humans2skills" class="nav-github" target="_blank" rel="noopener">
                     <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
@@ -30,7 +30,7 @@
             <p class="tagline">Turn the people who shaped you into AI skills</p>
             <div class="hero-buttons">
                 <a href="#examples" class="btn btn-primary">See Examples</a>
-                <a href="generator.html" class="btn btn-secondary">Create Your Own</a>
+                <a href="#create" class="btn btn-secondary">Create Your Own</a>
             </div>
         </div>
     </header>
@@ -102,7 +102,7 @@
                     <div class="step">
                         <span class="step-number">3</span>
                         <h3>Generate the Skill</h3>
-                        <p>Use our generator to create a prompt for Claude, ChatGPT, Gemini, or any AI assistant.</p>
+                        <p>Use the form below to create a prompt for Claude, ChatGPT, Gemini, or any AI assistant.</p>
                     </div>
                     <div class="step">
                         <span class="step-number">4</span>
@@ -113,11 +113,77 @@
             </div>
         </section>
 
-        <section id="cta" class="cta">
+        <section id="create" class="create">
             <div class="container">
-                <h2>Ready to Honor Your People?</h2>
-                <p>Think of someone who shaped you. Give them this small tribute.</p>
-                <a href="generator.html" class="btn btn-primary btn-large">Create Your Own Skill</a>
+                <h2>Create Your Skill</h2>
+                <p class="section-intro">Think of someone who helped you. A mentor, colleague, friend. Let's capture their energy.</p>
+
+                <form id="skill-form" class="skill-form">
+                    <div class="form-group">
+                        <label for="name">Their Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="e.g., Maria, James, Dr. Chen"
+                            required
+                        >
+                        <span class="helper-text">First name is enough. This is personal.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">What Makes Them Special?</label>
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="4"
+                            placeholder="e.g., She always stayed calm under pressure. Made complex things simple. Never made me feel dumb for asking questions. Had this way of making everyone feel heard..."
+                            required
+                        ></textarea>
+                        <span class="helper-text">Their energy, their approach, how they made you feel. Be specific.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="useCases">When Would You Call on Them?</label>
+                        <textarea
+                            id="useCases"
+                            name="useCases"
+                            rows="3"
+                            placeholder="e.g., When I'm overwhelmed and don't know where to start. When I need to explain something complicated to someone. When I'm doubting myself..."
+                            required
+                        ></textarea>
+                        <span class="helper-text">What situations bring them to mind?</span>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-primary" onclick="openInClaude()">
+                            Open in Claude
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="openInChatGPT()">
+                            Open in ChatGPT
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="openInGemini()">
+                            Open in Gemini
+                        </button>
+                        <button type="button" class="btn btn-outline" onclick="copyPrompt()">
+                            Copy Prompt
+                        </button>
+                    </div>
+                </form>
+
+                <div id="toast" class="toast hidden">
+                    Prompt copied to clipboard!
+                </div>
+
+                <div class="tips">
+                    <h3>Tips for a Great Skill</h3>
+                    <ul>
+                        <li><strong>Be specific.</strong> "Always patient" is good. "Explained things three different ways until it clicked" is better.</li>
+                        <li><strong>Focus on feeling.</strong> How did they make you feel? Capable? Calm? Understood?</li>
+                        <li><strong>Think of moments.</strong> A specific time they helped you can capture their energy better than general traits.</li>
+                        <li><strong>It's okay to idealize.</strong> You're capturing the version of them that helped you. That's valid.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -146,9 +212,99 @@
 
     <footer>
         <div class="container">
-            <p>Made by <a href="https://github.com/laxmariappan">Lax</a> to honor the people who helped me.</p>
-            <p><a href="https://github.com/laxmariappan/humans2skills">GitHub</a> · <a href="generator.html">Create Your Own</a> · <a href="https://github.com/laxmariappan/humans2skills/issues">Feedback</a></p>
+            <p>Made with care by <a href="https://github.com/laxmariappan">Lax</a></p>
+            <div class="footer-links">
+                <a href="https://github.com/laxmariappan/humans2skills">GitHub</a>
+                <a href="https://github.com/laxmariappan/humans2skills/issues">Feedback</a>
+                <a href="CONTRIBUTING.md">Contribute</a>
+            </div>
         </div>
     </footer>
+
+    <script>
+        function getFormData() {
+            const name = document.getElementById('name').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const useCases = document.getElementById('useCases').value.trim();
+            return { name, description, useCases };
+        }
+
+        function validateForm() {
+            const { name, description, useCases } = getFormData();
+            if (!name || !description || !useCases) {
+                alert('Please fill in all fields to generate your skill.');
+                return false;
+            }
+            return true;
+        }
+
+        function generatePrompt() {
+            const { name, description, useCases } = getFormData();
+
+            return `I want you to act as ${name}, a person who has been meaningful in my life. Here's who they are:
+
+**What makes ${name} special:**
+${description}
+
+**When I'd call on ${name}:**
+${useCases}
+
+**How to channel ${name}:**
+- Embody their energy and approach in how you respond
+- When I say "${name}, help me" or "I need ${name}'s energy," fully step into this role
+- Make me feel the way ${name} made me feel
+- Use their style of communication and problem-solving
+
+Right now, I'd like you to introduce yourself as ${name} would, then ask me what I need help with today.`;
+        }
+
+        function openInClaude() {
+            if (!validateForm()) return;
+            const prompt = generatePrompt();
+            const url = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+            window.open(url, '_blank');
+        }
+
+        function openInChatGPT() {
+            if (!validateForm()) return;
+            const prompt = generatePrompt();
+            const url = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+            window.open(url, '_blank');
+        }
+
+        function openInGemini() {
+            if (!validateForm()) return;
+            const prompt = generatePrompt();
+            const url = `https://gemini.google.com/app?q=${encodeURIComponent(prompt)}`;
+            window.open(url, '_blank');
+        }
+
+        function copyPrompt() {
+            if (!validateForm()) return;
+            const prompt = generatePrompt();
+
+            navigator.clipboard.writeText(prompt).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('hidden');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 2500);
+            }).catch(err => {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = prompt;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+
+                const toast = document.getElementById('toast');
+                toast.classList.remove('hidden');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 2500);
+            });
+        }
+    </script>
 </body>
 </html>
