@@ -359,22 +359,132 @@ section {
     margin-bottom: var(--space-md);
 }
 
-/* ---------- Simple Header ---------- */
-.header-simple {
+/* ---------- Community Section ---------- */
+.community {
+    text-align: center;
+    background: white;
+    border-top: 1px solid var(--color-border);
+}
+
+.community h2 {
+    margin-bottom: var(--space-xs);
+}
+
+.community > .container > p:first-of-type {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+}
+
+.community-actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-text);
+    color: white;
+    border-color: var(--color-text);
+}
+
+.btn-github:hover {
+    background: #000;
+    border-color: #000;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-github svg {
+    flex-shrink: 0;
+}
+
+.community-note {
+    font-size: 0.9rem;
+    color: var(--color-text-lighter);
+}
+
+/* ---------- Generator CTA ---------- */
+.generator-cta {
+    background: var(--color-bg-alt);
+    text-align: center;
+    padding: var(--space-md) 0;
+}
+
+.generator-cta p {
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
     background: white;
     padding: var(--space-sm) 0;
     border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.logo {
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
     font-family: var(--font-heading);
     font-size: 1.25rem;
     color: var(--color-text);
 }
 
-.logo:hover {
+.nav-logo:hover {
     color: var(--color-primary);
     text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.nav-links a {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.nav-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.75rem;
+    background: var(--color-text);
+    color: white !important;
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    transition: background 0.2s ease;
+}
+
+.nav-github:hover {
+    background: var(--color-primary);
+    color: white !important;
+}
+
+.nav-github svg {
+    flex-shrink: 0;
 }
 
 /* ---------- Generator Form ---------- */
@@ -575,5 +685,28 @@ footer a:hover {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: var(--space-sm);
+    }
+
+    .nav-links a:not(.nav-github) span,
+    .nav-github span {
+        display: none;
+    }
+
+    .nav-github {
+        padding: 0.4rem;
+    }
+
+    .community-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .community-actions .btn {
+        width: 100%;
+        max-width: 250px;
     }
 }
