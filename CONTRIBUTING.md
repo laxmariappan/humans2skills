@@ -1,130 +1,104 @@
-# Contributing to Humans 2 Skills
+# Contributing
 
-First off: thank you. This project is about honoring people. By contributing, you're part of that.
+Thanks for wanting to add to this.
 
-## Ways to Contribute
+## Ways to Help
 
-### 1. Share Your Own Skill
+### Share a Skill
 
-Got someone who shaped you? Turn them into a skill and share it.
+Got someone whose vibe you want to capture? Add them.
 
-**How to submit:**
+**How:**
 
-1. Fork this repository
-2. Create a new file in `/skills/` named `firstname.md` (lowercase)
-3. Follow the template below
-4. Submit a pull request
+1. Fork this repo
+2. Create `/skills/firstname.md` (lowercase)
+3. Use the template below
+4. Submit a PR
 
 **Template:**
 
 ```markdown
 # [Name]
 
-**Tagline:** [A short phrase that captures their essence]
+**Vibe:** [A short phrase]
 
 ## Who They Are
 
-[2-3 sentences about this person. Focus on their energy and approach, not personal details.]
+[2-3 sentences. Focus on their energy and approach, not personal details.]
 
-## When to Use This Skill
+## When to Channel Them
 
 - [Situation 1]
 - [Situation 2]
 - [Situation 3]
 
-## Their Energy & Approach
+## Their Style
 
-[A few paragraphs about what makes them special. How do they make you feel? What's their style? Be specific—specific is better than generic.]
+[What makes them great. How do they make you feel? Be specific.]
 
 ## How to Use
 
-In Claude, when you need [Name]'s energy:
+In Claude:
 - "Channel [Name]"
 - "Help me like [Name] would"
-- "I need [Name]'s approach"
+- "I need [Name]'s vibe"
 
-In ChatGPT, Gemini, or other AI tools:
+In ChatGPT or Gemini:
 > "Act as [Name]: [brief description]. Help me with [your problem]."
 
-## The Person Behind the Skill
+## Why This Person
 
-[Why does this person matter to you? A short story or reflection.]
+[Short story about why their vibe matters to you.]
 
-*Note: This skill is based on my personal observations. The real [Name] might be different—people are complex. But this is the energy I experienced, and it's worth sharing.*
+*Note: This is how I experience them. The real person might be different.*
 
 ---
 
-*Part of [Humans 2 Skills](https://github.com/laxmariappan/humans2skills) - Turn the people who shaped you into AI skills.*
+*Part of [Humans 2 Skills](https://github.com/laxmariappan/humans2skills)*
 ```
 
-**Guidelines for skills:**
+**Guidelines:**
 
-- **Be respectful.** Focus on professional qualities and approach, not personal details
-- **Be specific.** "Patient" is okay. "Explained things three different ways until it clicked" is better
-- **Be honest.** Include the note about these being your observations
-- **First names only.** No last names, companies, or identifying details unless you have permission
-- **No celebrities or public figures.** This is for people who personally helped you
+- Focus on professional vibes, not personal stuff
+- Be specific. "Patient" is okay. "Explains things three ways until it clicks" is better.
+- First names only unless you have permission
+- No celebrities or public figures. This is for people you actually know.
 
-### 2. Improve the Code
+### Fix Bugs or Improve Things
 
-Found a bug? Have an idea? PRs welcome.
+Found something broken? Have an idea? PRs welcome.
 
-**Areas that could use help:**
+**Before big changes:** Open an issue first so we can chat about it.
 
-- Accessibility improvements
-- Mobile experience
-- Better prompt templates
-- Internationalization/translations
-- Documentation
+### Improve the Prompts
 
-**Before you code:**
-
-- Check existing issues to see if someone's already working on it
-- For big changes, open an issue first to discuss
-
-### 3. Improve the Prompts
-
-The generator creates prompts that work, but they could always be better. If you've found prompt patterns that work well for capturing someone's energy, share them.
-
-### 4. Report Issues
-
-Something broken? Something confusing? [Open an issue](https://github.com/laxmariappan/humans2skills/issues).
-
-Include:
-- What you expected to happen
-- What actually happened
-- Browser/device if relevant
+If you've found better ways to capture someone's vibe, share what works.
 
 ## Pull Request Process
 
-1. Fork and clone the repo
-2. Create a branch: `git checkout -b your-feature-name`
+1. Fork and clone
+2. Make a branch: `git checkout -b your-thing`
 3. Make your changes
-4. Test locally (just open `index.html` in a browser)
+4. Test locally (just open `index.html`)
 5. Commit with a clear message
 6. Push and open a PR
 
-**Commit message style:**
+**Commit style:**
 
-Keep it simple and clear:
+Keep it simple:
 - `add: skill for Maria`
-- `fix: mobile layout on generator page`
-- `improve: prompt template for better tone capture`
+- `fix: mobile button layout`
+- `improve: prompt template`
 
 ## Code Style
 
-This is a simple static site. Let's keep it that way.
+Simple static site. Let's keep it that way.
 
 - No build process
 - No frameworks
-- Vanilla HTML, CSS, JavaScript
+- Vanilla HTML, CSS, JS
 - Readable over clever
-- Mobile-first
 
 ## Questions?
 
-Open an issue or reach out to [Lax](https://github.com/laxmariappan).
-
----
-
-*Thanks for being part of this. The people who shaped us deserve to be remembered.*
+Open an issue or find me at [github.com/laxmariappan](https://github.com/laxmariappan).

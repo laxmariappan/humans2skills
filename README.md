@@ -1,112 +1,93 @@
 # Humans 2 Skills
 
-**Turn the people who shaped you into AI skills.**
+**Turn your favorite people into AI skills. Carry their vibes with you.**
 
-We all have people who changed how we work. A mentor who made things click. A colleague who made hard days easier. A friend who believed in us first.
+You know that colleague who always knows what to say? Or that friend who makes hard things feel doable?
 
-This project helps you capture their energy and call on it whenever you need it—through AI.
-
-## What This Is
-
-A simple tool to honor the people who helped you by turning their approach into AI assistant prompts.
-
-It's not about replacing them. It's about remembering what they gave you.
+This project lets you capture their vibe and bring it into any AI conversation.
 
 ## Live Demo
 
-**[Visit the site →](https://laxmariappan.github.io/humans2skills)**
+**[Try it out →](https://laxmariappan.github.io/humans2skills)**
 
-## The Three Example Skills
+## Example Skills
 
-These are real people who shaped me. I captured their energy as skills I can call on:
+| Name | Vibe | Good For |
+|------|------|----------|
+| **Alfredo** | "Debugging with joy" | When you're stuck and need warmth |
+| **Cristina** | "Your coach in the corner" | When you're overwhelmed and need direction |
+| **Salvatore** | "Finding what matters" | When you need deep understanding |
 
-| Name | Tagline | When to Use |
-|------|---------|-------------|
-| **Alfredo** | "Debugging with joy" | When you're stuck on a bug and need warmth, not just answers |
-| **Cristina** | "Your coach in the corner" | When you're overwhelmed and need someone who believes in you |
-| **Salvatore** | "Finding what really matters" | When you need deep understanding, explained with patience |
-
-Read their full skill files in the [`/skills`](./skills) folder.
+Check out the full skill files in [`/skills`](./skills).
 
 ## How to Use
 
 ### Option 1: Use the Generator
 
-1. Go to the [generator page](https://laxmariappan.github.io/humans2skills/generator.html)
-2. Think of someone who helped you
-3. Describe what makes them special
+1. Go to the [live site](https://laxmariappan.github.io/humans2skills)
+2. Think of someone whose vibe you want to capture
+3. Describe what makes them great
 4. Click to open in Claude, ChatGPT, or Gemini
 
-### Option 2: Use Existing Skills
+### Option 2: Copy a Skill
 
-Copy a skill prompt from the [`/skills`](./skills) folder and paste it into your AI assistant.
+Grab a prompt from the [`/skills`](./skills) folder and paste it into your AI assistant.
 
 Or just say things like:
 - "Channel Alfredo and help me debug this"
-- "I need Cristina's coaching energy"
-- "Explain this like Salvatore would"
+- "I need Cristina's energy right now"
+- "Explain this the way Salvatore would"
 
-## Why I Built This
+## Why This Exists
 
-I kept finding myself wishing I could talk to certain people when I was stuck. Not because AI can replace them—it can't. But because their *approach* helped me, and I wanted access to that approach anytime.
+Sometimes you're stuck and you think: "I wish [person] was here."
 
-So I started describing them to AI assistants. It worked better than expected.
+Not because AI can replace them. But because their way of thinking helps you think better.
 
-This project is my way of sharing that idea. And honoring the people who helped me along the way.
+So I started describing people to AI assistants. Turns out it works pretty well.
+
+This is a way to share that trick.
 
 ## Project Structure
 
 ```
 humans2skills/
-├── index.html          # Landing page
-├── generator.html      # Create your own skill
+├── index.html          # The whole thing
 ├── style.css           # Styling
 ├── skills/
-│   ├── alfredo.md      # Example: Happy developer
-│   ├── cristina.md     # Example: Supportive coach
-│   └── salvatore.md    # Example: Empathetic engineer
+│   ├── alfredo.md      # Happy developer
+│   ├── cristina.md     # Supportive coach
+│   └── salvatore.md    # Wise engineer
 ├── README.md           # You're here
-├── CONTRIBUTING.md     # How to contribute
+├── CONTRIBUTING.md     # How to add skills
 └── LICENSE             # MIT
 ```
 
-## Run Locally
+## Run It Locally
 
-No build process. No dependencies. Just open `index.html` in your browser.
+No build. No dependencies. Just open `index.html`.
 
-Or use a simple server:
+Or:
 
 ```bash
-# Python 3
 python -m http.server 8000
-
-# Then visit http://localhost:8000
+# visit http://localhost:8000
 ```
 
 ## Contributing
 
-Want to share your own "human skill"? See [CONTRIBUTING.md](./CONTRIBUTING.md).
+Want to share a skill? See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-This project welcomes:
-- New example skills (with thoughtful, respectful descriptions)
-- Bug fixes and improvements
-- Translations
-- Better prompts
+## Privacy Note
 
-## A Note on Privacy
+The skills here are based on how I experience these people at work. I focus on their professional vibes, not personal stuff.
 
-The example skills in this project are based on my personal observations of real people. They focus on professional qualities and approaches—not personal details.
-
-If you create your own skills, please be thoughtful. Honor people. Don't expose them.
+If you create your own, be thoughtful. Capture vibes, not secrets.
 
 ## License
 
-MIT — do what you want with it. See [LICENSE](./LICENSE).
+MIT. Do what you want with it.
 
 ## Credits
 
-Built by [Lax](https://github.com/laxmariappan) to honor the people who helped me become who I am.
-
----
-
-*The people who help us deserve to be remembered. This is one small way to do that.*
+Made by [Lax](https://github.com/laxmariappan).
