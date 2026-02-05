@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Editor directories
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Node modules (if we add any build tools later)
+node_modules/
+
+# Logs
+*.log
+
+# Build instructions (not needed in public repo)
+START_HERE.md
+PROJECT_BLUEPRINT.md
+CLAUDE_CODE_INSTRUCTIONS.md

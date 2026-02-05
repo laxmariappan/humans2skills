@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Skill - Humans 2 Skills</title>
+    <meta name="description" content="Turn someone who shaped you into an AI skill. Create a custom prompt for Claude, ChatGPT, or Gemini.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-simple">
+        <div class="container">
+            <a href="index.html" class="logo">Humans 2 Skills</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="generator">
+            <div class="container">
+                <h1>Create Your Skill</h1>
+                <p class="section-intro">Think of someone who helped you. A mentor, colleague, friend. Let's capture their energy.</p>
+
+                <form id="skill-form" class="skill-form">
+                    <div class="form-group">
+                        <label for="name">Their Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="e.g., Maria, James, Dr. Chen"
+                            required
+                        >
+                        <span class="helper-text">First name is enough. This is personal.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">What Makes Them Special?</label>
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="4"
+                            placeholder="e.g., She always stayed calm under pressure. Made complex things simple. Never made me feel dumb for asking questions. Had this way of making everyone feel heard..."
+                            required
+                        ></textarea>
+                        <span class="helper-text">Their energy, their approach, how they made you feel. Be specific.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="useCases">When Would You Call on Them?</label>
+                        <textarea
+                            id="useCases"
+                            name="useCases"
+                            rows="3"
+                            placeholder="e.g., When I'm overwhelmed and don't know where to start. When I need to explain something complicated to someone. When I'm doubting myself..."
+                            required
+                        ></textarea>
+                        <span class="helper-text">What situations bring them to mind?</span>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-primary" onclick="openInClaude()">
+                            Open in Claude
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="openInChatGPT()">
+                            Open in ChatGPT
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="openInGemini()">
+                            Open in Gemini
+                        </button>
+                        <button type="button" class="btn btn-outline" onclick="copyPrompt()">
+                            Copy Prompt
+                        </button>
+                    </div>
+                </form>
+
+                <div id="toast" class="toast hidden">
+                    Prompt copied to clipboard!
+                </div>
+
+                <div class="tips">
+                    <h3>Tips for a Great Skill</h3>
+                    <ul>
+                        <li><strong>Be specific.</strong> "Always patient" is good. "Explained things three different ways until it clicked" is better.</li>
+                        <li><strong>Focus on feeling.</strong> How did they make you feel? Capable? Calm? Understood?</li>
+                        <li><strong>Think of moments.</strong> A specific time they helped you can capture their energy better than general traits.</li>
+                        <li><strong>It's okay to idealize.</strong> You're capturing the version of them that helped you. That's valid.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Made by <a href="https://github.com/laxmariappan">Lax</a> to honor the people who helped me.</p>
+            <p><a href="index.html">Back to Home</a> · <a href="https://github.com/laxmariappan/humans2skills">View on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function getFormData() {
+            const name = document.getElementById('name').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const useCases = document.getElementById('useCases').value.trim();
+            return { name, description, useCases };
+        }
+
+        function validateForm() {
+            const { name, description, useCases } = getFormData();
+            if (!name || !description || !useCases) {
+                alert('Please fill in all fields to generate your skill.');
+                return false;
+            }
+            return true;
+        }
+
+        function generatePrompt() {
+            const { name, description, useCases } = getFormData();
+
+            return `I want you to act as ${name}, a person who has been meaningful in my life. Here's who they are:
+
+**What makes ${name} special:**
+${description}
+
+**When I'd call on ${name}:**
+${useCases}
+
+**How to channel ${name}:**
+- Embody their energy and approach in how you respond
+- When I say "${name}, help me" or "I need ${name}'s energy," fully step into this role
+- Make me feel the way ${name} made me feel
+- Use their style of communication and problem-solving
+
+Right now, I'd like you to introduce yourself as ${name} would, then ask me what I need help with today.`;
+        }
+
+        function openInClaude() {
+            if (!validateForm()) return;
+            const prompt = generatePrompt();
+            const url = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+            window.open(url, '_blank');
+        }
+
+        function openInChatGPT() {
+            if (!validateForm()) return;
+            const prompt = generatePrompt();
+            const url = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+            window.open(url, '_blank');
+        }
+
+        function openInGemini() {
+            if (!validateForm()) return;
+            const prompt = generatePrompt();
+            const url = `https://gemini.google.com/app?q=${encodeURIComponent(prompt)}`;
+            window.open(url, '_blank');
+        }
+
+        function copyPrompt() {
+            if (!validateForm()) return;
+            const prompt = generatePrompt();
+
+            navigator.clipboard.writeText(prompt).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('hidden');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 2500);
+            }).catch(err => {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = prompt;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+
+                const toast = document.getElementById('toast');
+                toast.classList.remove('hidden');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 2500);
+            });
+        }
+    </script>
+</body>
+</html>
